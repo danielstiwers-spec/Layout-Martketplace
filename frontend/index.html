@@ -1,106 +1,174 @@
 <!DOCTYPE html>
-<html lang="ptbr">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verde Marketplace</title>
+    <meta name="description" content="Encontre produtos frescos e ofertas para a sua semana no Verde.">
+    <title>Verde — mais perto de você.</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <img src="marketplace.png" alt="Marketplace">
-        <h1><span>verde</span>.</h1>
-        <div class="address">
-            <p>Entregar em</p>
-            <p>Selecione o seu endereço</p>
-            <button>></button>
+        <div class="header-main">
+            <a class="brand" href="#inicio" aria-label="Verde, página inicial">
+                <img src="marketplace.png" alt="">
+                <span>verde</span>
+            </a>
+
+            <form class="search" action="/buscar" method="get" role="search">
+                <input
+                    type="search"
+                    id="search-products"
+                    name="q"
+                    aria-label="Buscar produtos"
+                    placeholder="O que você precisa hoje?"
+                >
+            </form>
+
+            <button class="address" type="button">
+                <img src="localizacao.png" alt="">
+                <span class="address-text">
+                    <span>Entregar em</span>
+                    <span>Selecione o seu endereço</span>
+                </span>
+                <span aria-hidden="true">⌄</span>
+            </button>
+
+            <nav class="account-nav" aria-label="Conta e carrinho">
+                <a href="/conta">
+                    <img src="perfil.png" alt="">
+                    <span>Minha conta</span>
+                </a>
+                <a class="cart-link" href="/carrinho">
+                    <span>Carrinho</span>
+                    <span class="cart-count" aria-label="0 itens">0</span>
+                </a>
+            </nav>
         </div>
-        <div class="search">
-            <img src="search.png" alt="Search">
-            <input type="search" name="" id="">
-        </div>
-        <ul>
-            <li>
-                <img src="perfil.png" alt="Perfil">
-                <a href="#">Minha Conta</a>
-            </li>
-            <li>
-                <button><img src="" alt=""><a href="#">Carrinho &varsigma;</a></button>
-            </li>
-        </ul>
-    </header>
-    <hr>
-    <main>
-        <nav>
-            <button><p>Todas as categorias ></p></button>
+        <hr>
+        <nav class="primary-nav" aria-label="Navegação principal">
+            <a class="all-categories" href="#categorias">
+                <span aria-hidden="true">☷</span>
+                <span>Todas as categorias</span>
+                <span aria-hidden="true">⌄</span>
+            </a>
             <ul>
-                <li>
-                    <a href="">Início</a>
-                </li>
-                <li>
-                    <img src="" alt="">
-                    <a href="">Ofertas</a>
-                </li>
-                <li>
-                    <a href="">Mais vendidos</a>
-                </li>
-                <li>
-                    <a href="">Favoritos</a>
-                </li>
+                <li><a class="active" href="#inicio" aria-current="page">Início</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="/mais-vendidos">Mais vendidos</a></li>
+                <li><a href="/favoritos">Favoritos</a></li>
             </ul>
-            <div class="nav-info">
-                <img src="entrega-rapida.png" alt="Entrega rápida">
-            <p>Do mercado para a sua casa</p>
-            </div>
+            <p class="nav-info">
+                <img src="entrega-rapida.png" alt="">
+                <span>Do mercado para a sua casa</span>
+            </p>
         </nav>
         <hr>
-        <section class="container-show">
-            <img src="" alt="">
-            <p>FRESCOR QUE FAZ PARTE DA VIDA</p>
-            <h2>Seu mercado. Mais fresco. <span>Mais perto.</span></h2>
-            
+    </header>
+
+    <main>
+        <section class="container-show" id="inicio" aria-labelledby="hero-title">
+            <p class="hero-eyebrow">
+                <img src="folha.png" alt="">
+                <span>Frescor que faz parte da vida</span>
+            </p>
+            <h1 id="hero-title">Seu mercado.<br>Mais fresco.<br><span>Mais perto.</span></h1>
             <p>Tudo o que você precisa para a semana, com qualidade e carinho para cada escolha.</p>
-            <button>Aproveitar ofertas -></button>
+            <a class="button-primary" href="#ofertas">
+                Aproveitar ofertas <span aria-hidden="true">→</span>
+            </a>
         </section>
-        <section class="container-info">
-            <div class="practice">
-                <img src="" alt="">
+
+        <section class="container-info" aria-label="Vantagens do Verde">
+            <article class="practice">
+                <img src="entrega-rapida.png" alt="">
                 <div class="practice-text">
-                    <p>Na sua porta</p>
+                    <h2>Na sua porta</h2>
                     <p>Praticidade para o seu dia a dia</p>
                 </div>
-            </div>
-            <div class="choose">
-                <img src="" alt="">
+            </article>
+            <article class="choose">
+                <img src="folha.png" alt="">
                 <div class="practice-text">
-                    <p>Fresquinho de verdade</p>
+                    <h2>Fresquinho de verdade</h2>
                     <p>Produtos escolhidos com cuidado</p>
                 </div>
-            </div>
-            <div class="quality">
-                <img src="" alt="">
+            </article>
+            <article class="quality">
+                <img src="escudo.png" alt="">
                 <div class="practice-text">
-                    <p>Compre com tranquilidade</p>
+                    <h2>Compre com tranquilidade</h2>
                     <p>Qualidade em cada escolha</p>
                 </div>
+            </article>
+        </section>
+
+        <section class="container-categories" id="categorias" aria-labelledby="categories-title">
+            <div class="section-heading">
+                <h2 id="categories-title">O que vai na sua cesta?</h2>
+                <a href="#ofertas">Ver tudo <span aria-hidden="true">›</span></a>
             </div>
+            <ul class="category-list">
+                <li class="category-card"><h3>Hortifruti</h3></li>
+                <li class="category-card"><h3>Carnes e peixes</h3></li>
+                <li class="category-card"><h3>Laticínios</h3></li>
+                <li class="category-card"><h3>Padaria</h3></li>
+                <li class="category-card"><h3>Mercearia</h3></li>
+                <li class="category-card"><h3>Bebidas</h3></li>
+                <li class="category-card"><h3>Limpeza</h3></li>
+                <li class="category-card"><h3>Orgânicos</h3></li>
+            </ul>
         </section>
-        <hr>
-        <section class="container-categories">
-            <h3>O que vai na sua cesta?</h3>
-            <a href="">Ver tudo ></a>
-        </section>
-        <section class="container-offerts">
-            <div>
-                <h3>Ofertas da Semana</h3>
-                <img src="" alt="">
-                <p>Uma cesta cheia de coisas boas. E de economia.</p>
+
+        <section class="container-offerts" id="ofertas" aria-labelledby="offers-title">
+            <div class="section-heading">
+                <div>
+                    <h2 id="offers-title">Ofertas da semana</h2>
+                    <p>Uma cesta cheia de coisas boas. E de economia.</p>
+                </div>
+                <a href="#ofertas">Ver todas <span aria-hidden="true">›</span></a>
             </div>
-            
-            <a href="">Ver todas ></a>
-            
-            <div class="offerts-nav"></div>
+
+            <ul class="product-list" aria-label="Produtos em oferta">
+                <li class="product-card">
+                    <article>
+                        <p class="discount">-25%</p>
+                        <h3>Bananas</h3>
+                    </article>
+                </li>
+                <li class="product-card">
+                    <article>
+                        <p class="discount">-30%</p>
+                        <h3>Morango</h3>
+                    </article>
+                </li>
+                <li class="product-card">
+                    <article>
+                        <p class="discount">-28%</p>
+                        <h3>Abacate</h3>
+                    </article>
+                </li>
+                <li class="product-card">
+                    <article>
+                        <p class="discount">-18%</p>
+                        <h3>Leite</h3>
+                    </article>
+                </li>
+                <li class="product-card">
+                    <article>
+                        <p class="discount">-23%</p>
+                        <h3>Pão</h3>
+                    </article>
+                </li>
+                <li class="product-card">
+                    <article>
+                        <p class="discount">-23%</p>
+                        <h3>Ovos</h3>
+                    </article>
+                </li>
+            </ul>
         </section>
+
     </main>
 </body>
 </html>
